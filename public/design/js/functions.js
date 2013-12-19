@@ -27,4 +27,9 @@ $(document).ready(function(){
     };
     $('input:text, textarea').ToggleInputValue();
 
+    $(".main.home .right .signin a").click(function() {
+        $( ".main.home .right .login" ).toggle( "slidedown", function() {
+        });
+    });
+
 });

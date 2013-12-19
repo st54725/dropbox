@@ -1,21 +1,102 @@
-body, html {font-size: 12px;font-family:Verdana;margin:0;padding:0;color:#313131;background:#F3F5F8;}
+body, html {font-size: 12px;font-family:Verdana;margin:0;padding:0;color:#313131;background:#FFF;}
+ul,li {
+    margin:0;
+    padding:0;
+}
+.main {
+    margin:0 auto;
+    width:900px;
+}
+.main.home .left {
+    float:left;
+    width:452px;
+    height:479px;
+    background: url('../img/left.jpg') no-repeat;
+}
+.main.home .right {
+    float:right;
+    width:350px;
+    height:700px;
+    margin-left:50px;
+}
 
-a {color:#243AD7;}
+.signup {
+    float:left;
+}
 
-div#left {float:left;width:220px;overflow:hidden;padding:20px;background:#C7CFDE;height:290px}
-div#left #copy{margin-top:190px}
-div#content {float:left; width:700px; background:#E0E6ED;padding:20px;padding-left:70px;}
+.main.home .right .logo {
+    background: url('../img/logo.jpg') no-repeat;
+    width:274px;
+    height:172px;
+}
 
-div#menu {background:#A3B1C9;padding:20px;}
-div#menu a {padding-right:10px;}
+.main.home .right #signup {
+    width:300px;
+    float:left;
+    margin-left:25px;
+}
 
-div#block {margin:20px;}
-div#block #title{margin:20px;}
-div#block #text{margin:20px;}
+.main.home li {
+    float:left;
+    margin-bottom:10px;
+    list-style: none;
+    clear:both;
+}
+.main.home li input {
+    height:21px;
+    padding:6px 5px;
+    width:213px;
+    line-height: 21px;
+    border:1px solid #bfbfbf;
+    border-radius: 3px;
+}
 
-div#block #date{margin:20px;}
+.main.home .right .login {
+    float:left;
+    margin-left:-2px;
+    margin-top:20px;
+    clear:both;
+    display: none;
+}
 
-#login-form { float:left; }
-#login-form input { width:175px; height:25px; border-radius:8px; border:1px solid #ddd; clear:both; float:left; margin-bottom:10px; }
-#login-form button { clear:both; float:left; margin-top:10px; }
+.main.home .right .login ul li {
+    list-style: none;
+    margin-bottom:20px;
+    margin-left:27px;
+}
+
+.main.home .right .signin {
+    float:left;
+    margin:20px 0 0 25px;
+    font-size:14px;
+    width:220px;
+    text-align: center;
+}
+
+.main.home .right .login .buttonsignin {
+    background: url('../img/signin.png') no-repeat;
+    width:284px;
+    height:45px;
+    float:left;
+}
+.main.home .right .login .buttonsignin:hover {
+    background: url('../img/signin-hover.png') no-repeat;
+}
+
+.main.home .right .signin a {
+    color:#2895F1;
+    font-size:15px;
+}
+
+.main.home .right .signup .button {
+    background: url('../img/signup-hover.jpg') no-repeat;
+    width:225px;
+    height:45px;
+    float:left;
+    margin-left:25px;
+}
+
+.main.home .right .signup .button:hover {
+    background: url('../img/signup-active.jpg') no-repeat;
+}
 

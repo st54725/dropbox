@@ -22,13 +22,12 @@ class Registration extends Zend_Db_Table_Abstract
      * @param int $articleId Идентификатор статьи
      * @return array
      */
-    public function setUser($realname,$email,$pass,$name)
+    public function setUser($name,$email,$pass)
     {
         $table = new Registration();
         $data = array(
-            'name' => $name,
-            'realname' => $realname,
-            'pass' => $pass,
+            'username' => $name,
+            'password' => $pass,
             'email' => $email,
         );
         $table->insert($data);

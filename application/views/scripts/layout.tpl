@@ -9,16 +9,11 @@
 	 <?php echo $this->headScript(); ?>
  </head>
 <body>
-    <div id="menu">
-        <?php echo $this->partial('menu.tpl'); ?>
-    </div>
-    <div id="main">
-        <div id="left">
-            <div style = "margin:5px;">New Article's:</div>
-            <?php echo $this->action('index', 'articles'); ?>
-            <div id = "copy">(c) St54509. </div>
-        </div>
-        <div id="content"><?php echo $this->layout()->content; ?></div>
-    </div>
+
+
+<div id="content"><?php echo $this->layout()->content; ?></div>
+
+
+
 </body>
 </html>

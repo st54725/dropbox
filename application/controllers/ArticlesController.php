@@ -2,17 +2,17 @@
 
 /**
  * ArticlesController
- * 
+ *
  * Работа с статьями
- * 
+ *
  * @author Александр Махомет aka San для http://zendframework.ru
  */
-class ArticlesController extends Zend_Controller_Action 
+class ArticlesController extends Zend_Controller_Action
 {
     /**
      * Список статей
      */
-    public function indexAction() 
+    public function indexAction()
     {
         $modelArticles = new Articles();
         $articles = $modelArticles->getArticles();
@@ -21,8 +21,8 @@ class ArticlesController extends Zend_Controller_Action
 
     /**
      * Выбранная статья
-     */    
-    public function viewAction() 
+     */
+    public function viewAction()
     {
         // Получение параметра пришедшего от пользователя
         $articleId = $this->_getParam('articleId');
@@ -31,9 +31,9 @@ class ArticlesController extends Zend_Controller_Action
         $modelArticles = new Articles();
 
         // Выполнения метода модели по получению информации о статье
-        $article = $modelArticles->getArticles($articleId);
-        
+        //$article = $modelArticles->getArticles($articleId);
+
         // Определение переменных для вида
-        $this->view->article = $article;
+        //$this->view->article = $article;
     }
 }
