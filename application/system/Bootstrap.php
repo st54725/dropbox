@@ -7,7 +7,6 @@ require 'Zend/Loader.php';
  *
  * Главный системный класс, используется для настройки и запуска приложения
  *
- * @author Александр Махомет aka San для http://zendframework.ru
  */
 class Bootstrap
 {

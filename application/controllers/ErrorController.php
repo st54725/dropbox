@@ -1,19 +1,12 @@
 <?php
 
-/**
- * ErrorController
- * 
- * Обработчик ошибок
- * 
- * @author Александр Махомет aka San для http://zendframework.ru
- */
-class ErrorController extends Zend_Controller_Action 
+class ErrorController extends Zend_Controller_Action
 {
 
     /**
      * Обработка ошибки 404 либо 500
      */
-    public function errorAction() 
+    public function errorAction()
     {
 
         $errors = $this->_getParam('error_handler');

@@ -29,7 +29,7 @@
 						<input class="username" name="username" value="Username">
 					</li>
 					<li>
-						<input class="password" name="password" value="Password">
+						<input type="password" class="password" name="password" value="Password">
 					</li>
 				</ul>
 			</form>
@@ -48,9 +48,12 @@
 			url: 'http://dropbox.localhost/index/save/username/'+username+'/password/'+password+'/email/'+email,
 			success:
 				function(data) {
-
+					window.location.reload(true);
+					if (data == true) {
+					}
 				}
 		});
+		alert('User has been successfully created!')
 	}
 	function sign(){
 		var username = $(".login .username").val();
@@ -61,8 +64,8 @@
 			url: 'http://dropbox.localhost/index/auth/username/'+username+'/password/'+password,
 			success:
 					function(data) {
-
 					}
 		});
+		window.setTimeout('location.reload()', 1000);
 	}
 </script>

@@ -100,3 +100,35 @@ ul,li {
     background: url('../img/signup-active.jpg') no-repeat;
 }
 
+.right h1 {
+    width: 410px;
+    word-wrap: break-word;
+}
+
+.right table td {
+    padding:5px;
+}
+.right table td a, .main .logout {
+    color:#2895F1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.right table td a:hover , .main .logout:hover {
+    text-decoration: underline;
+}
+
+.main .logout {
+    float:right;
+    font-size:15px;
+}
+.back {
+    float:left;
+    color:#2895F1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back:hover {
+    text-decoration: underline;
+}

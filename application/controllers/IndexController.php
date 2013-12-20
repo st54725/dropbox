@@ -7,7 +7,11 @@ class IndexController extends Zend_Controller_Action
 {
     public function indexAction()
     {
-        $this->view->content = '<h1>Welcome to VVIkipedia!</h1>';
+        $request = $this->getRequest();
+        $auth		= Zend_Auth::getInstance();
+        if($auth->hasIdentity()){
+            $this->_redirect('/upload');
+        }
     }
 
 
@@ -19,6 +23,7 @@ class IndexController extends Zend_Controller_Action
         $modelRegistration = new Registration();
 
         $modelRegistration->setUser($name,$email,$pass);
+        return json_encode('true');
     }
 
     public function authAction(){
@@ -45,44 +50,10 @@ class IndexController extends Zend_Controller_Action
             //print_r($result);
             $data = $authAdapter->getResultRowObject(null,'password');
             $auth->getStorage()->write($data);
-            $this->_redirect('/molodec');
+            return json_encode(true);
         }else{
-            $this->_redirect('/lohjebanij');
+            return json_encode(false);
         }
-
-    }
-
-    public function processAction()
-    {
-
-        $registry = Zend_Registry::getInstance();
-        $DB = $registry['DB'];
-
-        $request = $this->getRequest();
-        $data = array('first_name' => $request->getParam('first_name'),
-                      'last_name' => $request->getParam('last_name'),
-                      'user_name' => $request->getParam('user_name'),
-                      'password' => md5($request->getParam('password'))
-        );
-        $DB->insert('user', $data);
-
-        $this->view->assign('title','Registration Process');
-        $this->view->assign('description','Registration succes');
-
-    }
-
-    public function delAction()
-    {
-        $registry = Zend_Registry::getInstance();
-        $DB = $registry['DB'];
-
-        $request = $this->getRequest();
-
-        $DB->delete('user', 'id = '.$request->getParam('id'));
-
-        $this->view->assign('title','Delete Data');
-        $this->view->assign('description','Deleting succes');
-        $this->view->assign('list',$request->getBaseURL()."/user/list");
 
     }
 }

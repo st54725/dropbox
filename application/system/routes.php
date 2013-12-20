@@ -2,8 +2,7 @@
 
 /**
  * Файл формирования маршрутов. Происходит инициализация объекта маршрутизации и задание правил маршрутизации
- * 
- * @author Александр Махомет aka San для http://zendframework.ru
+ *
  */
 
 $router = new Zend_Controller_Router_Rewrite();

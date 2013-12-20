@@ -2,12 +2,11 @@
 
 /**
  * Error
- * 
+ *
  * Ручной обработчик ошибок
- * 
- * @author Александр Махомет aka San для http://zendframework.ru
+ *
  */
-class Error 
+class Error
 {
 
     /**
@@ -15,7 +14,7 @@ class Error
      *
      * @param exception $exception Перехватываемое исключение
      */
-    public static function catchException(Exception $exception) 
+    public static function catchException(Exception $exception)
     {
 
         // Получение текста ошибки
@@ -29,8 +28,8 @@ class Error
         // Если включен режим отладки отображаем сообщение о ошибке на экран
         if($config->debug->on) {
             Zend_Debug::dump($str);
-        } 
-        // Иначе выводим сообщение об ошибке 
+        }
+        // Иначе выводим сообщение об ошибке
         else {
             // Здесь может происходить логирование ошибки, уведомление вебмастера и т д
             die('System error! Please try later');
