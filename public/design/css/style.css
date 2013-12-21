@@ -78,6 +78,7 @@ ul,li {
     width:284px;
     height:45px;
     float:left;
+    cursor: pointer;
 }
 .main.home .right .login .buttonsignin:hover {
     background: url('../img/signin-hover.png') no-repeat;
@@ -94,6 +95,7 @@ ul,li {
     height:45px;
     float:left;
     margin-left:25px;
+    cursor:pointer;
 }
 
 .main.home .right .signup .button:hover {
