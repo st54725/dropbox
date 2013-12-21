@@ -52,6 +52,16 @@ class UploadController extends Zend_Controller_Action
                     move_uploaded_file($_FILES["file"]["tmp_name"],
                         $_SERVER['DOCUMENT_ROOT']. "files/" . $_FILES["file"]["name"]);
                     $content =  "Successfull uploaded! </br> Filename : " . $_FILES["file"]["name"];
+
+                    $filename = $_FILES["file"]["name"];
+                    $size = ($_FILES["file"]["size"] / 1024);
+                    $uploadModel = new Upload();
+                    $registrationModel = new Registration();
+                    $auth		= Zend_Auth::getInstance();
+                    $username	= $auth->getIdentity()->username;
+                    $id = $registrationModel->getId($username);
+                    $downloadlink = "http://".$_SERVER['HTTP_HOST']."/files/" . $_FILES["file"]["name"];
+                    $uploadModel->Uploadfile($filename,$size,$id['id'],$downloadlink);
                 }
             }
         }
@@ -60,15 +70,7 @@ class UploadController extends Zend_Controller_Action
             $content = "File wasn't uploaded.Invalid file!";
         }
 
-        $filename = $_FILES["file"]["name"];
-        $size = ($_FILES["file"]["size"] / 1024);
-        $uploadModel = new Upload();
-        $registrationModel = new Registration();
-        $auth		= Zend_Auth::getInstance();
-        $username	= $auth->getIdentity()->username;
-        $id = $registrationModel->getId($username);
-        $downloadlink = "http://".$_SERVER['HTTP_HOST']."/files/" . $_FILES["file"]["name"];
-        $uploadModel->Uploadfile($filename,$size,$id['id'],$downloadlink);
+
 
         $this->view->content = $content;
 
